@@ -1,0 +1,41 @@
+version(1);
+
+project_name = "4coder";
+
+patterns = {
+"*.sh",
+"*.bat",
+"*.cpp",
+"*.c",
+"*.h",
+"*.hhp",
+};
+
+blacklist_patterns = {
+};
+
+load_paths = {
+   { {
+      {"."}
+      }, .os = "win" },
+};
+
+command_list = {
+   { .name = "build",
+     .out = "*compilation*",
+     .footer_panel = true,
+     .save_dirty_files = false,
+     .cursor_at_end = false,
+     .cmd = { { "ls", .os = "linux" }, },
+   },
+   { .name = "run",
+     .out = "*run*",
+     .footer_panel = true,
+     .save_dirty_files = false,
+     .cursor_at_end = false,
+     .cmd = { { "ls", .os = "linux" }, },
+   },
+};
+
+fkey_command[8] = "build";
+fkey_command[9] = "run";
